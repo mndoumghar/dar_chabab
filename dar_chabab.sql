@@ -143,7 +143,7 @@ ALTER TABLE `reservations`
 --
 -- Indexes for table `salles`
 --
-ALTER TABLE `salles`
+ALTER TABLE `salles` 
   ADD PRIMARY KEY (`id`);
 
 --
