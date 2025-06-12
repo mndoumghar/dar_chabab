@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url('../images/banner6.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px; /* Adjust the value to change the curve radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.787);
+}
+
+.main h1 {
+    text-align: center;
+    color: #fe6a07;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif; /* Make font bolder */
+}
+
+.main label {
+    font-weight: bold;
+    color: #000102;
+    font-size: small;
+    display: inline-block; /* Align labels next to inputs */
+    width: 30%;
+    font-family: Arial; /* Set width of labels */
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Set display to inline-block to make inputs align next to each other */
+.main input[type="text"],
+.main input[type="email"],
+.main input[type="number"],
+.main input[type="password"],
+.main input[type="date"],
+.main input[type="file"],
+.main input[type="submit"],
+.main input[type="radio"] {
+    width: calc(70% - 10px); /* Adjust width */
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #d6d6d6;
+    border-radius: 9px;
+    box-sizing: border-box;
+    display: inline-block; /* Align inputs next to each other */
+}
+
+.main input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.main .submit {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.main .submit input[type="submit"] {
+    background-color: #070dc7;
+    color: rgba(255, 255, 255, 0.852);
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 12px;
+    height: 40px;
+    margin-bottom: -20px;
+    font-weight: bolder;
+}
+
+.main .submit input[type="submit"]:hover {
+    background-color: #ff9a2d;
+    transition-duration: 1s;
+}
+
+.main a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main a:hover {
+    color: #000;
+}
+
+/* Error message styling */
+
+
+.alert {
+    margin-top: 10px;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+}
+
+.alert.danger {
+    background-color: #e87d88;
+}
+
+.alert.succes {
+    background-color: #2bd47d;
+}
+
+.alert.warning {
+    background-color: darkgoldenrod;
+}
