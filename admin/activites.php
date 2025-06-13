@@ -1,18 +1,16 @@
 <?php
 session_start();
-// تحقق صلاحية المشرف
-
+// check ila kayn admin
 include("../includes/db.php");
 
 $error = $success = "";
 
-// إضافة نشاط جديد
+//  addd activiter
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["ajouter"])) {
     $titre = $_POST["titre"];
     $description = $_POST["description"];
     $date_activite = $_POST["date_activite"];
-
-    // رفع صورة (اختياري)
+// zid photos 
     $image = "";
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
         $target_dir = "../assets/images/";
@@ -29,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["ajouter"])) {
     }
 }
 
-// حذف نشاط
+
 if (isset($_GET["delete"])) {
     $id = intval($_GET["delete"]);
     $conn->query("DELETE FROM activites WHERE id = $id");
@@ -37,29 +35,28 @@ if (isset($_GET["delete"])) {
     exit;
 }
 
-// جلب الأنشطة
 $activites = $conn->query("SELECT * FROM activites ORDER BY date_activite DESC");
 ?>
 
 <?php include("../includes/header.php"); ?>
 
-<h2>إدارة الأنشطة</h2>
+<h2>Mangement activiter</h2>
 
 <?php if ($success) echo "<p style='color:green;'>$success</p>"; ?>
 <?php if ($error) echo "<p style='color:red;'>$error</p>"; ?>
 
-<h3>إضافة نشاط جديد</h3>
+<h3>Add new acteveter</h3>
 <form method="POST" enctype="multipart/form-data">
-    <label>عنوان النشاط:</label><br>
+    <label>title actv</label><br>
     <input type="text" name="titre" required><br><br>
 
-    <label>وصف النشاط:</label><br>
+    <label>Description</label><br>
     <textarea name="description" required></textarea><br><br>
 
-    <label>تاريخ النشاط:</label><br>
+    <label>date /// </label><br>
     <input type="date" name="date_activite" required><br><br>
 
-    <label>صورة النشاط (اختياري):</label><br>
+    <label>photo actv</label><br>
     <input type="file" name="image" accept="image/*"><br><br>
 
     <button type="submit" name="ajouter">إضافة</button>
@@ -67,15 +64,15 @@ $activites = $conn->query("SELECT * FROM activites ORDER BY date_activite DESC")
 
 <hr>
 
-<h3>قائمة الأنشطة</h3>
+<h3>List actveter ... </h3>
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
         <tr>
-            <th>عنوان</th>
-            <th>الوصف</th>
-            <th>التاريخ</th>
-            <th>صورة</th>
-            <th>حذف</th>
+            <th>titre</th>
+            <th>desciption</th>
+            <th>date</th>
+            <th>photo</th>
+            <th>delete</th>
         </tr>
     </thead>
     <tbody>

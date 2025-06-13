@@ -1,14 +1,15 @@
 <?php
 session_start();
-// هنا خاصك تضيف تحقق من صلاحية المشرف
 // مثلاً: if (!isset($_SESSION["admin_logged_in"])) { header("Location: ../login.php"); exit; }
-
+// had dyal admin  
+//mli katdkhl b admin admin
+//katl3 lik had lpage 
 include("../includes/db.php");
 ?>
 
 <?php include("../includes/header.php"); ?>
 
-<h2 style="text-align:center;">لوحة تحكم المشرف</h2>
+<h2 style="text-align:center;">dashboard admin</h2>
 
 <nav style="text-align:center; margin-bottom:20px;">
     <a href="activites.php">إدارة الأنشطة</a> |
@@ -17,6 +18,6 @@ include("../includes/db.php");
     <a href="reservations.php">قائمة الحجوزات</a>
 </nav>
 
-<p style="text-align:center;">مرحباً بك في لوحة تحكم دار الشباب.</p>
+<p style="text-align:center;">مرحباً بك في ///   دار الشباب.</p>
 
 <?php include("../includes/footer.php"); ?>
